@@ -18,5 +18,5 @@ app.get('/', function (req, res) {
 
 // START SERVER
 app.listen(3000, function(){
-	console.log("The SLP Application Manager server is now active!");
+	console.log("The SLP Application Manager server is now active on localhost:3000!");
 }); 
