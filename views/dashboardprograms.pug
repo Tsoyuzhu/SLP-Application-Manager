@@ -1,0 +1,21 @@
+html
+	head
+		title Dashboard 
+		
+		//CSS
+		link()
+
+		//FONTS
+		link()
+
+		
+		//MIXINS
+		include dashboard-sidebar.mixin
+
+	body
+		.container-fluid
+			+dashboardwithonebutton()
+			.pagecontent
+				div(class="button" href="views/homepage-dashboard.pug")
+					h1 Programs 
+				
