@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  br
+  h2 Import CSV file using NodeJS and MongoDB
+  br
+  p
+   //-a(href='javascript:void(0)' class='btn btn-primary' id='importdata') Excel to CSV [TODO]
+   a(href='javascript:void(0)' class='btn btn-primary' id='importdata') Import CSV 
+   | &nbsp;&nbsp;&nbsp;
+   a(href='javascript:void(0)' class='btn btn-primary' id='fetchdata') Fetch Data
+   | &nbsp;&nbsp;&nbsp;
+   a(href='javascript:void(0)' class='btn btn-primary' id='cleardb') Clear Database
+  br  
+  p#message.alert.alert-success(style='display:none')
+  br
+  table.table.table-bordered
+    thead
+        tr
+            th Timestamp
+            th Name
+            th Email
+            th Phone
+            th Year
+            th University
+            th Degree
+            th Preference
+    tbody#trdata
+        tr
+            td(colspan='3') Click on <strong>Import CSV</strong> button to import and save data to MongoDB. <br />Click on <strong>Fetch Data</strong> button to display data from database
+
