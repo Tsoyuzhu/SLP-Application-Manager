@@ -41,6 +41,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
+
+
+// ROUTES
+app.get('/dashboardprograms', function (req, res) {
+  res.render('dashboardprograms'); 
+});
+
+app.get('/homepage-dashboard', function (req, res) {
+	res.render('homepage-dashboard'); 
+});
+app.get('/viewapplications', function (req, res) {
+  res.render('viewapplications'); 
+});
+app.get('/tammy', function (req, res) {
+  res.render('tammy'); 
+});
+
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
