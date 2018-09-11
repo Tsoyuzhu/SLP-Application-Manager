@@ -1,0 +1,52 @@
+html
+	head
+		title newProgram
+
+	body
+		h1 Create A New Program	
+
+		.form
+			.container-fluid
+				label(for="newProgram") New Program:
+				input(type="newProgram" placeholder="Program Name" required)
+			
+			.container-fluid
+				p
+					label(for="creatorName") Creator Name:
+					input(type="creatorName" placeholder="Name of Creator(s)" required)
+			
+			.container-fluid
+				p
+					label(for="Coordinators") Coordinator(s):
+					input(type="Coordinators" placeholder="Coordinator(s) names" required)
+		
+			.container-fluid
+				p
+					label(for="Venue") Venue:
+					input(type="Venue" placeholder="Venue Name" required)
+
+			.container-fluid
+				p
+					label(for="datetime-local") Date/Time:
+					input(type="datetime-local" required)
+
+			.container-fluid
+				p
+					label(for="number") Capacity:
+					input(type="number" placeholder="Max Capacity" required)
+			
+			.container-fluid
+				p
+					label(for="textarea") Description:
+					textarea(placeholder="Give a Brief Description" rows="4" cols="50")
+
+			
+			.container
+				p
+					label(for="File") Attach File (Optional):
+					input(type="File" accept="file_extension")
+			
+			button Create New Program 
+		
+
+

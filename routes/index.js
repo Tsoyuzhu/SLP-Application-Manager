@@ -68,4 +68,9 @@ router.get('/', function(req, res, next) {
     });
 
 });
+
+router.get('/newProgram', function(req,res) {
+    res.render('newProgram');
+});
+
 module.exports = router;
