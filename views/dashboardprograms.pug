@@ -1,6 +1,6 @@
 html
 	head
-		title Dashboard 
+		title Staff Dashboard 
 		
 		//CSS
 		link()
@@ -13,10 +13,9 @@ html
 
 	body
 		.container-fluid
-			+dashboard()
 			.pagecontent
-				div(class="button" href="views/viewapplications.pug")
-					h1 Programs
+				a(href="views/homepage-dashboard.pug")
+					button(typ="button") Programs
 			.sidebar
 				block sidebar 
 					p temporary navigation bar 
