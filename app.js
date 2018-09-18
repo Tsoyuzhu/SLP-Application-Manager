@@ -10,11 +10,10 @@ var flash = require('connect-flash');
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/dbproducts', { useNewUrlParser: true }/*, { useMongoClient: true }*/);
+//mongoose.connect('mongodb://localhost/dbproducts', { useNewUrlParser: true }, { useMongoClient: true });
 require("./models/Product");
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+
 
 var app = express();
 
@@ -35,11 +34,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
  
- app.use(flash());
+app.use(flash());
+
+
+var index = require('./routes/index');
+//var users = require('./routes/users');
 
 
 app.use('/', index);
-app.use('/users', users);
+//app.use('/users', users);
 
 
 
@@ -51,9 +54,11 @@ app.get('/dashboardprograms', function (req, res) {
 app.get('/homepage-dashboard', function (req, res) {
 	res.render('homepage-dashboard'); 
 });
+
 app.get('/viewapplications', function (req, res) {
   res.render('viewapplications'); 
 });
+
 app.get('/tammy', function (req, res) {
   res.render('tammy'); 
 });
