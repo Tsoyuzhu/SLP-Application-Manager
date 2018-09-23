@@ -9,7 +9,7 @@ var Product  = mongoose.model('Products');
 
 var csvfile = __dirname + "/../public/files/products.csv";
 var stream = fs.createReadStream(csvfile);
-
+var programsDB = require("../models/addProgram");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -69,28 +69,43 @@ router.get('/', function(req, res, next) {
 
 });
 
-
 router.get('/newProgram', function(req,res) {
     res.render('newProgram');
 });
 
-app.post('/newProgram', function (req, res) {
+router.post('/newProgram', function (req, res) {
   var programName = req.body.programName;
   var creator = req.body.creatorName;
-  var date = req.body.date;
+  var capacity = req.body.capacity;
+  var venue = req.body.venue;
   var description = req.body.description;
-  var table = {
-    programName: programName, 
-    creator: creatorName, 
-    date: date, 
-    description: description
-  };
 
-  table.save(function(err) {
-    if(err) {
-      return handleError(err);
-    }
+// argument 1: the data we wanna put in the data base.
+// argument 2: call back function - this runs after we put stuff in the database.
+  programsDB.create(
+    {
+        programName: programName,
+        creatorName: creator,
+        venue: venue,
+        capacity: capacity,
+        description: description
+    },
+    function (err, programWeJustSaved) {
+        if (err) {
+            return console.log(err);
+        }
+        res.redirect('/showPrograms')
   });
+});
+
+// first parameter for find is a condition which you want to place on the query.
+router.get('/showPrograms', function(req,res) {
+    programsDB.find({}, function(err, programsWeJustGotBack) {
+        if (err) {
+            console.log(err);
+        }
+        res.render('showPrograms', {programs : programsWeJustGotBack});
+    });
 });
 
 module.exports = router;
