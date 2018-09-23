@@ -69,11 +69,28 @@ router.get('/', function(req, res, next) {
 
 });
 
+
 router.get('/newProgram', function(req,res) {
     res.render('newProgram');
 });
-router.get('/dashboardAdmin', function(req,res) {
-    res.render('dashboardAdmin');
+
+app.post('/newProgram', function (req, res) {
+  var programName = req.body.programName;
+  var creator = req.body.creatorName;
+  var date = req.body.date;
+  var description = req.body.description;
+  var table = {
+    programName: programName, 
+    creator: creatorName, 
+    date: date, 
+    description: description
+  };
+
+  table.save(function(err) {
+    if(err) {
+      return handleError(err);
+    }
+  });
 });
 
 module.exports = router;
