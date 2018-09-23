@@ -48,6 +48,19 @@ app.get('/dashboardprograms', function (req, res) {
   res.render('dashboardprograms'); 
 });
 
+app.post('/dashboardAdmin', function (req, res) {
+  var programName = req.body.programName;
+  var creator = req.body.creatorName;
+  var date = req.body.date;
+  var description = req.body.description;
+  var table = {programName: programName, creator: creatorName, date: date, description: description};
+
+  table.save(function (err) {
+
+    if(err) return handleError(err);
+});
+
+
 app.get('/homepage-dashboard', function (req, res) {
 	res.render('homepage-dashboard'); 
 });

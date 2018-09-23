@@ -72,5 +72,8 @@ router.get('/', function(req, res, next) {
 router.get('/newProgram', function(req,res) {
     res.render('newProgram');
 });
+router.get('/dashboardAdmin', function(req,res) {
+    res.render('dashboardAdmin');
+});
 
 module.exports = router;
