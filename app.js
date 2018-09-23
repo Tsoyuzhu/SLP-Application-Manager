@@ -48,12 +48,14 @@ app.get('/dashboardprograms', function (req, res) {
   res.render('dashboardprograms'); 
 });
 
-app.get('/homepage-dashboard', function (req, res) {
-	res.render('homepage-dashboard'); 
+app.get('/staffDashboard', function (req, res) {
+	res.render('staffDashboard'); 
 });
-app.get('/viewapplications', function (req, res) {
-  res.render('viewapplications'); 
+
+app.get('/viewallapplications', function (req, res) {
+  res.render('viewallapplications'); 
 });
+
 app.get('/tammy', function (req, res) {
   res.render('tammy'); 
 });
