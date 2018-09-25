@@ -44,16 +44,20 @@ app.use('/users', users);
 
 
 // ROUTES
-app.get('/dashboardprograms', function (req, res) {
-  res.render('dashboardprograms'); 
+app.get('/staffdashboardprograms', function (req, res) {
+  res.render('staffDashboardPrograms'); 
 });
 
-app.get('/staffDashboard', function (req, res) {
+app.get('/staffdashboard', function (req, res) {
 	res.render('staffDashboard'); 
 });
 
-app.get('/viewallapplications', function (req, res) {
-  res.render('viewallapplications'); 
+app.get('/staffviewallapplications', function (req, res) {
+  res.render('staffViewAllApplications'); 
+});
+
+app.get('/markanapplication', function (req, res) {
+  res.render('staffMarkAnApplication'); 
 });
 
 app.get('/tammy', function (req, res) {
