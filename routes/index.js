@@ -108,4 +108,13 @@ router.get('/showPrograms', function(req,res) {
     });
 });
 
+router.get('/manageProgram/:id', function(req,res) {
+    programsDB.findById(req.param.id, function(err, programWeJustGotBacl) {
+        if (err) {
+            console.log(err);
+        }
+        res.render('showPrograms', {programs : programsWeJustGotBack});
+    });
+});
+
 module.exports = router;
