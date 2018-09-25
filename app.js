@@ -34,21 +34,45 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
- 
- app.use(flash());
+app.use(flash());
 
 
 app.use('/', index);
 app.use('/users', users);
-
-
 
 // ROUTES
 app.get('/staffdashboardprograms', function (req, res) {
   res.render('staffDashboardPrograms'); 
 });
 
+<<<<<<< HEAD
 app.get('/staffdashboard', function (req, res) {
+=======
+app.post('/dashboardAdmin', function (req, res) {
+  var programName = req.body.programName;
+  var creator = req.body.creatorName;
+  var date = req.body.date;
+  var description = req.body.description;
+  var table = {
+    programName: programName, 
+    creator: creatorName, 
+    date: date, 
+    description: description
+  };
+
+  table.save(function(err) {
+    if(err) {
+      return handleError(err);
+    }
+  });
+});
+
+app.get('/homepage-dashboard', function (req, res) {
+  res.render('homepage-dashboard'); 
+});
+  
+app.get('/staffDashboard', function (req, res) {
+>>>>>>> e1632b37950d0cb6fdb8b9dee24a4489674fc696
 	res.render('staffDashboard'); 
 });
 
@@ -63,8 +87,6 @@ app.get('/markanapplication', function (req, res) {
 app.get('/tammy', function (req, res) {
   res.render('tammy'); 
 });
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -87,6 +109,6 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 
-app.listen(3000, function(){
+app.listen(3000, function() {
   console.log("The SLP Application Manager server is now active on localhost:3000!");
 }); 

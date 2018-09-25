@@ -1,0 +1,35 @@
+
+head
+	title
+	script(src='javascripts/dashboardAdmin.js')
+
+body
+
+	h1 Dashboard
+
+	.program Program Name:
+		input(type="text" name="program" id="program")
+	.creator Creator Name:
+		input(type="text" name="creator" id="creator")
+	.date Date/Time:
+		input(type="datetime-local" name="date" id="date")
+	.container
+		input(type="button" value="Create Program" onClick="addRow()" id="add")
+	
+	.container
+		p
+			table(id="table" border="1")
+				thead(id="table-head")
+					tr
+						th
+							.program Program Name:
+						th
+							.creator Creator Name:
+						th
+							.date Date/Time: 
+			
+				tbody(id="table-body")
+
+		
+
+	

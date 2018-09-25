@@ -1,52 +1,46 @@
 html
 	head
 		title newProgram
+		script(src='javascripts/dashboardAdmin.js')
 
 	body
 		h1 Create A New Program	
 
-		.form
+		form(method='post' action='/newProgram')
 			.container-fluid
 				label(for="newProgram") New Program:
-				input(type="newProgram" placeholder="Program Name" required)
+				input(type="text" name="programName" placeholder="Program Name" required)
 			
 			.container-fluid
 				p
 					label(for="creatorName") Creator Name:
-					input(type="creatorName" placeholder="Name of Creator(s)" required)
-			
-			.container-fluid
-				p
-					label(for="Coordinators") Coordinator(s):
-					input(type="Coordinators" placeholder="Coordinator(s) names" required)
-		
+					input(type="text" name="creatorName" placeholder="Name of Creator(s)" required)
+	
 			.container-fluid
 				p
 					label(for="Venue") Venue:
-					input(type="Venue" placeholder="Venue Name" required)
-
-			.container-fluid
-				p
-					label(for="datetime-local") Date/Time:
-					input(type="datetime-local" required)
+					input(type="text" name="venue" placeholder="Venue Name" required)
 
 			.container-fluid
 				p
 					label(for="number") Capacity:
-					input(type="number" placeholder="Max Capacity" required)
+					input(type="number" name="capacity" placeholder="Max Capacity" required)
 			
 			.container-fluid
 				p
 					label(for="textarea") Description:
-					textarea(placeholder="Give a Brief Description" rows="4" cols="50")
+					textarea(name="description" placeholder="Give a Brief Description" rows="4" cols="50")
 
 			
 			.container
 				p
 					label(for="File") Attach File (Optional):
-					input(type="File" accept="file_extension")
+					input(type="File" name="file" accept="file_extension")
 			
-			button Create New Program 
-		
+			button(type='submit') Create New Program 
+
+
+
+			
 
 
