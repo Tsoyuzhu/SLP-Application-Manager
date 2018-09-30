@@ -8,7 +8,7 @@
 			var td3 = document.createElement("td");    
 			var row = document.createElement("tr");
 
-			td1.innerHTML = document.getElementById("program").value;
+			td1.innerHTML = document.getElementById(program.programName).value;
 			td2.innerHTML  = document.getElementById("creator").value;
 			td3.innerHTML  = document.getElementById("date").value;
 

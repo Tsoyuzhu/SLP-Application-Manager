@@ -1,19 +1,19 @@
-html
-	head
-		title newProgram
-		script(src='javascripts/dashboardAdmin.js')
+extends layout
+
+block content
 
 	body
-		h1 Create A New Program	
+		h1 Create New Program	
 
 		form(method='post' action='/newProgram')
 			.container-fluid
-				label(for="newProgram") New Program:
-				input(type="text" name="programName" placeholder="Program Name" required)
+				p
+					label(for="newProgram") New Program:
+					input(type="text" name="programName" placeholder="Program Name" required)
 			
 			.container-fluid
 				p
-					label(for="creatorName") Creator Name:
+					label(for="creatorName") Creator Name: 
 					input(type="text" name="creatorName" placeholder="Name of Creator(s)" required)
 	
 			.container-fluid

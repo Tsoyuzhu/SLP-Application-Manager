@@ -1,16 +1,33 @@
-html
-	head
-		title showPrograms
-	body
+extends layout 
+
+block content
+
+	h1 Programs Dashboard
+	p
+
+		table(id="table" border="3" )
+
+			tr 
+				th
+					h4= "Program Name: "
+				th
+					h4= "Creator Name: "
+				th
+					h4= "Venue: "
+				th
+					h4= "Capacity: "
+
 		// put interpolation
 		each program in programs
 			form(method="GET" action="/manageProgram/"+program.id)
-				input= program.programName
-			
+				table(id="table" border="3" )
 
-
-
-
-			
-
-
+						tr
+							td
+								button= program.programName
+							td
+								h5= program.creatorName
+							td
+								h5= program.venue 
+							td
+								h5= program.capacity 

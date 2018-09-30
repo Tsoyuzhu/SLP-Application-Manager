@@ -45,9 +45,9 @@ app.get('/staffdashboardprograms', function (req, res) {
   res.render('staffDashboardPrograms'); 
 });
 
-<<<<<<< HEAD
-app.get('/staffdashboard', function (req, res) {
-=======
+//<<<<<<< HEAD
+//app.get('/staffdashboard', function (req, res) {
+//=======
 app.post('/dashboardAdmin', function (req, res) {
   var programName = req.body.programName;
   var creator = req.body.creatorName;
@@ -72,7 +72,7 @@ app.get('/homepage-dashboard', function (req, res) {
 });
   
 app.get('/staffDashboard', function (req, res) {
->>>>>>> e1632b37950d0cb6fdb8b9dee24a4489674fc696
+//>>>>>>> e1632b37950d0cb6fdb8b9dee24a4489674fc696
 	res.render('staffDashboard'); 
 });
 

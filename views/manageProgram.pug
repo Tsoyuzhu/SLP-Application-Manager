@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	// put interpolation
+	h1 Program Information
+	p
+	.program
+		h4= "Program: " + program.programName
+		h4= "Creator: " + program.creatorName
+		h4= "Capacity: " + program.capacity
+		h4= "Venue: " + program.venue
+		h4= "Description: " + program.description
+
+	button= "Create Application"
+	button= "Edit Program"
+	button= "Delete Program"
