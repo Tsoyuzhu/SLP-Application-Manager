@@ -3,14 +3,13 @@ extends layout
 block content
 	// put interpolation
 	h1 Program Information
-	p
-	.program
-		h4= "Program: " + program.programName
-		h4= "Creator: " + program.creatorName
-		h4= "Capacity: " + program.capacity
-		h4= "Venue: " + program.venue
-		h4= "Description: " + program.description
-
-	button= "Create Application"
+	
+	h4= "Program: " + program.programName
+	h4= "Creator: " + program.creatorName
+	h4= "Capacity: " + program.capacity
+	h4= "Venue: " + program.venue
+	h4= "Description: " + program.description
+	form(action="/deleteProgram/" + program.id) 
+		button(type="submit", value="delete program")
 	button= "Edit Program"
 	button= "Delete Program"

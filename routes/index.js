@@ -116,13 +116,14 @@ router.get('/manageProgram/:id', function(req,res) {
         res.render('manageProgram', {program : programWeJustGotBack});
     });
 });
-router.get('/deleteProgram/:id' function(req,res) {
-    programsDB.removeById(req.params.id, function(err, programWeJustGotBack) {
+router.get('/deleteProgram/:id', function(req,res) {
+  console.log(req.params.id)
+    programsDB.remove({"_id":req.params.id}, function(err, programWeJustGotBack) {
         if (err) {
-            console.log(err);
+            console.log(err,);
         }
         res.redirect('/showPrograms')
-    };
+    });
 });
 
 module.exports = router;
