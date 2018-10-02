@@ -3,25 +3,27 @@ extends layout
 block content
 
 	body
-		h1 Create New Program	
+		h1 Create A New Program	
 
 		form(method='post' action='/newProgram')
+
 			.container-fluid
-				p
 					label(for="newProgram") New Program:
-					input(type="text" name="programName" placeholder="Program Name" required)
-			
+					input#FocusedInput.form-control(type="text" name="programName" placeholder="Program Name" required)
+			p
+
 			.container-fluid
 				p
 					label(for="creatorName") Creator Name: 
-					input(type="text" name="creatorName" placeholder="Name of Creator(s)" required)
+					input#FocusedInput.form-control(type="text" name="creatorName" placeholder="Name of Creator(s)" required)
 	
 			.container-fluid
 				p
 					label(for="Venue") Venue:
-					input(type="text" name="venue" placeholder="Venue Name" required)
+					input#FocusedInput.form-control(type="text" name="venue" placeholder="Venue Name" required)
 
 			.container-fluid
+				p
 				p
 					label(for="number") Capacity:
 					input(type="number" name="capacity" placeholder="Max Capacity" required)

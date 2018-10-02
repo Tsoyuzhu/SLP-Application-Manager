@@ -10,6 +10,7 @@ block content
 	h4= "Venue: " + program.venue
 	h4= "Description: " + program.description
 	form(action="/deleteProgram/" + program.id) 
-		button(type="submit", value="delete program")
+		button(type="submit", value="delete program")= "Delete Program"
 	button= "Edit Program"
-	button= "Delete Program"
+	
+	button= "Create Application"
