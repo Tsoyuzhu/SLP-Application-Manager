@@ -116,6 +116,7 @@ router.get('/manageProgram/:id', function(req,res) {
         res.render('manageProgram', {program : programWeJustGotBack});
     });
 });
+
 router.get('/deleteProgram/:id', function(req,res) {
   console.log(req.params.id)
     programsDB.remove({"_id":req.params.id}, function(err, programWeJustGotBack) {

@@ -67,6 +67,10 @@ app.post('/dashboardAdmin', function (req, res) {
   });
 });
 
+app.get('/studentDashboard', function (req, res) {
+  res.render('studentDashboard'); 
+});
+
 app.get('/homepage-dashboard', function (req, res) {
   res.render('homepage-dashboard'); 
 });
