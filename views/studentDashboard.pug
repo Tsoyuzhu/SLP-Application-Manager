@@ -1,0 +1,80 @@
+extends layout
+
+block content
+  br
+  p
+    .container
+      h2 Student Dashboard
+      p
+        | Hi! Welcome -INSERT WELCOME MSG-
+      ul.nav.nav-tabs
+        li
+          a(data-toggle="tab" href="#prog") Available Programs
+        li.active
+          a(data-toggle="tab" href="#appMgt") Application Management 
+        li
+          a(data-toggle="tab" href="#profile") My Profile
+      .tab-content
+        #prog.tab-pane.fade
+          h3 Available Programs
+          p
+            | The following are all the current Real Skills Education programs that are available to apply for.
+            //-a(href="/tammy")
+                  //-button.sign-up-btn(style="margin-right:10px;") Login 
+            table.table.table-bordered
+              thead
+                tr
+                  th Program
+                  th Applications Begin...
+                  th Applications Close...
+                  th Program Start Date
+                  th Program End Date
+        #appMgt.tab-pane.fade.in.active
+          h3 My Applications
+          p
+            | The following shows all programs that you are applying or have applied for.
+            table.table.table-bordered
+              thead
+                tr
+                  th Application Title
+                  th Date Applied
+                  th Status
+                  th Note
+        #profile.tab-pane.fade
+          h3 My Profile
+          p
+            | The following are your details in the system. Edit and press save to change any details.
+            form.form-horizontal(action="/action_page.php")
+              .form-group
+                label.control-label.col-sm-2(for="id") ID:
+                .col-sm-10 
+                  input#id.form-control(type="text" disabled="" value="123456")
+              .form-group
+                label.col-sm-2.control-label First Name:
+                .col-sm-10
+                  input#focusedInput.form-control(type="text" value="Tammy")
+              .form-group
+                label.col-sm-2.control-label Last Name:
+                .col-sm-10
+                  input#focusedInput.form-control(type="text" value="Zhong")
+              .form-group
+                label.col-sm-2.control-label Phone:
+                .col-sm-10
+                  input#focusedInput.form-control(type="text" value="0412 345 678")
+              .form-group
+                label.col-sm-2.control-label Email:
+                .col-sm-10
+                  input#focusedInput.form-control(type="text" value="tammy@realskillseducation.com")
+              .form-group
+                label.control-label.col-sm-2(for="pwd") Old Password:
+                .col-sm-10
+                  input#pwd.form-control(type="password" placeholder="Enter password" name="pwd" value="123456")
+              .form-group
+                label.control-label.col-sm-2(for="pwd") New Password:
+                .col-sm-10
+                  input#pwd.form-control(type="password" placeholder="Enter password" name="pwd" value="")
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  button.btn.btn-default(type="save") Save
+
+
