@@ -9,8 +9,19 @@ block content
 	h4= "Capacity: " + program.capacity
 	h4= "Venue: " + program.venue
 	h4= "Description: " + program.description
-	form(action="/deleteProgram/" + program.id) 
-		button(type="submit", value="delete program")= "Delete Program"
-	button= "Edit Program"
+
 	
+	form(action="/deleteProgram/" + program.id)
+		button(type="submit", value="delete program")= "Delete Program"
+	p
+	
+	form(action="/editProgram/" + program.id)
+		button(type="submit" value="editProgram")= "Edit Program"	
+		
+	p
+
 	button= "Create Application"
+
+	p
+	form(action="/showPrograms")
+		button(type="submit" value="dashboard")= "Back to Dashboard"

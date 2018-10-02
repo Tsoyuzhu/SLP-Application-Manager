@@ -3,9 +3,15 @@ extends layout
 block content
 
 	body
-		h1 Create A New Program	
+		h1 Create New Program
+		.container
+			
+			form(action="/showPrograms")
+				button(type="submit" value="dashboard")= "Back to Dashboard"	
+			p
 
-		form(method='post' action='/newProgram')
+		form.form-horizontal(method='post' action='/newProgram')
+			p
 
 			.container-fluid
 					label(for="newProgram") New Program:
@@ -14,35 +20,40 @@ block content
 
 			.container-fluid
 				p
-					label(for="creatorName") Creator Name: 
+					label(for="creatorName") Name of Creator:
 					input#FocusedInput.form-control(type="text" name="creatorName" placeholder="Name of Creator(s)" required)
 	
 			.container-fluid
 				p
 					label(for="Venue") Venue:
 					input#FocusedInput.form-control(type="text" name="venue" placeholder="Venue Name" required)
+				p
 
 			.container-fluid
-				p
-				p
 					label(for="number") Capacity:
-					input(type="number" name="capacity" placeholder="Max Capacity" required)
-			
 			.container-fluid
-				p
-					label(for="textarea") Description:
-					textarea(name="description" placeholder="Give a Brief Description" rows="4" cols="50")
+					input(type="number" name="capacity" placeholder="Max Capacity" required)
+			p
 
-			
-			.container
+			.container-fluid
+					label(for="textarea") Description:
+			.container-fluid
+					textarea(name="description" placeholder="Give a Brief Description" rows="5" cols="75")
+
+			p
+			.container-fluid
 				p
 					label(for="File") Attach File (Optional):
 					input(type="File" name="file" accept="file_extension")
-			
-			button(type='submit') Create New Program 
+
+			.container-fluid
+				p
+				p
+
+					button(type='submit') Create New Program 
 
 
 
-			
+				
 
 

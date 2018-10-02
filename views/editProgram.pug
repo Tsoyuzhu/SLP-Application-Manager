@@ -1,0 +1,48 @@
+extends layout
+
+block content
+
+	body
+
+		h2 Edit Program
+
+		form(action='/manageProgram/' + program.id)
+			button(type='submit' value="manageProgram")= "Go back to Program"
+
+		form.form-horizontal(method='post' action='/programEdited/' + program.id)
+			p
+
+			.container-fluid
+					label(for="newProgram") Program Name:
+					input#FocusedInput.form-control(type="text" name="programName" value=program.programName required)
+			p
+
+			.container-fluid
+				p
+					label(for="creatorName") Name of Creator:
+					input#FocusedInput.form-control(type="text" name="creatorName" value=program.creatorName required)
+	
+			.container-fluid
+				p
+					label(for="Venue") Venue:
+					input#FocusedInput.form-control(type="text" name="venue" value=program.venue required)
+				p
+
+			.container-fluid
+					label(for="number") Capacity:
+			.container-fluid
+					input(type="number" name="capacity" value=program.capacity required)
+			p
+
+			.container-fluid
+					label(for="description") Description:
+			.container-fluid
+					textarea(name="description" type="textarea" value=program.description rows="5" cols="75")
+
+			p
+
+			.container-fluid
+				p
+				p
+
+					button(type='submit') Edit Program 

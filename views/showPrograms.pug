@@ -3,6 +3,8 @@ extends layout
 block content
 
 	h1 Programs Dashboard
+	form(action="/newProgram")
+		button(type="submit", value="newProgram" )= "Create New Program"
 
 	table.table.table-bordered
 
@@ -10,7 +12,7 @@ block content
 			th
 				h4 Program Name: 
 			th
-				h4 Creator Name: 
+				h4 Created By: 
 			th
 				h4 Venue: 
 			th
@@ -28,4 +30,4 @@ block content
 					td
 						h5= program.venue 
 					td
-						h5= program.capacity 
+						h5= program.capacity + " " + "People"

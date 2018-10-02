@@ -126,5 +126,37 @@ router.get('/deleteProgram/:id', function(req,res) {
         res.redirect('/showPrograms')
     });
 });
+  
+router.get('/editProgram/:id', function(req,res) {
+    programsDB.findById(req.params.id, function(err, programWeJustGotBack) {
+        if (err) {
+            console.log(err);
+        }
+        res.render('editProgram', {program : programWeJustGotBack});
+    });
+});
+
+router.post('/editProgram/:id', function (req, res) {
+  var programName = req.body.programName;
+  var creator = req.body.creatorName;
+  var capacity = req.body.capacity;
+  var venue = req.body.venue;
+  var description = req.body.description;
+
+ programsDB.update(
+    {
+        programName: programName,
+        creatorName: creator,
+        venue: venue,
+        capacity: capacity,
+        description: description
+    },
+    function (err, programWeJustSaved) {
+        if (err) {
+            return console.log(err);
+        }
+        res.redirect('/showPrograms')
+  });
+});
 
 module.exports = router;
